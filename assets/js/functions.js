@@ -35,45 +35,39 @@ window.addEventListener("scroll", () => {
 })
 
 /* ------------------ OWL CAROUSEL ------------------ */
+const autoplay = (embla, interval) => {
+    let timer = 0;
 
+    const play = () => {
+        stop();
+        requestAnimationFrame(() => (timer = window.setTimeout(next, interval)));
+    };
+
+    const stop = () => {
+        window.clearTimeout(timer);
+        timer = 0;
+    };
+
+    const next = () => {
+        if (embla.canScrollNext()) {
+            embla.scrollNext();
+        } else {
+            embla.scrollTo(0);
+        }
+        play();
+    };
+
+    return { play, stop };
+};
 import EmblaCarousel from 'embla-carousel';
 const wrap = document.querySelector(".embla");
 const viewPort = wrap.querySelector(".embla__viewport");
-const prevBtn = wrap.querySelector(".embla__button--prev");
-const nextBtn = wrap.querySelector(".embla__button--next");
 const embla = EmblaCarousel(viewPort, {
     slidesToScroll: 1,
-    loop: true,
-    containScroll: "trimSnaps"
+    loop: true
 });
-const disablePrevAndNextBtns = disablePrevNextBtns(prevBtn, nextBtn, embla);
-
-setupPrevNextBtns(prevBtn, nextBtn, embla);
-
-embla.on("select", disablePrevAndNextBtns);
-embla.on("init", disablePrevAndNextBtns);
-// $(".owl-carousel").each(function() {
-//     var $Carousel = $(this);
-//     $Carousel.owlCarousel({
-//         loop: $Carousel.data('loop'),
-//         autoplay: $Carousel.data("autoplay"),
-//         margin: $Carousel.data('space'),
-//         nav: $Carousel.data('nav'),
-//         dots: $Carousel.data('dots'),
-//         dotsSpeed: $Carousel.data('speed'),
-//         responsive: {
-//             0: {
-//                 items: 1
-//             },
-//             600: {
-//                 items: $Carousel.data('slide-res')
-//             },
-//             1000: {
-//                 items: $Carousel.data('slide'),
-//             }
-//         }
-//     });
-// });
+const autoplayer = autoplay(embla, 4000);
+embla.on("init", autoplayer.play);
 
 
 /* ------------------ NAVBAR SCROLLING SECTION ------------------ */
