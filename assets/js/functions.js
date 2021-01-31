@@ -34,9 +34,24 @@ window.addEventListener("scroll", () => {
         document.querySelector(".navbar-sticky").classList.remove("navbar-fixed");
 })
 
-
 /* ------------------ OWL CAROUSEL ------------------ */
 
+import EmblaCarousel from 'embla-carousel';
+const wrap = document.querySelector(".embla");
+const viewPort = wrap.querySelector(".embla__viewport");
+const prevBtn = wrap.querySelector(".embla__button--prev");
+const nextBtn = wrap.querySelector(".embla__button--next");
+const embla = EmblaCarousel(viewPort, {
+    slidesToScroll: 1,
+    loop: true,
+    containScroll: "trimSnaps"
+});
+const disablePrevAndNextBtns = disablePrevNextBtns(prevBtn, nextBtn, embla);
+
+setupPrevNextBtns(prevBtn, nextBtn, embla);
+
+embla.on("select", disablePrevAndNextBtns);
+embla.on("init", disablePrevAndNextBtns);
 // $(".owl-carousel").each(function() {
 //     var $Carousel = $(this);
 //     $Carousel.owlCarousel({
@@ -164,19 +179,23 @@ document.querySelector("form.ContactForm").addEventListener("submit", (e) => {
     let form = e.currentTarget;
     let xhr = new XMLHttpRequest();
 
-    xhr.open("POST", '/public/build/api/contact.php', true);
+    xhr.open("GET", "", true);
 
     xhr.onreadystatechange = function() {
-        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-            document.querySelector(".ContactForm").classList.add("hidden");
-            let success = document.querySelector(".ContactConfirm");
-            success.classList.remove("hidden");
-            success.style["visibility"] = "visible";
-            success.style["animation-name"] = "fadeInUp";
-        } else {
-            console.log("error message")
+        document.querySelector(".ContactForm").classList.add("hidden");
+        if (this.readyState === XMLHttpRequest.DONE) {
+            console.log("this.status = " + this.status);
+            let view = document.querySelector(this.status === 201 ? ".ContactConfirm" : ".ContactError");
+            view.classList.remove("hidden");
+            view.style["visibility"] = "visible";
+            view.style["animation-name"] = "fadeInUp";
         }
     }
 
     xhr.send(new FormData(form));
+})
+
+document.querySelector(".GoToForm").addEventListener("click", () => {
+    document.querySelector(".ContactForm").classList.remove("hidden");
+    document.querySelector(".ContactError").classList.add("hidden");
 })
