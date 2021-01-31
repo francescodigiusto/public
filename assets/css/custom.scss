@@ -302,9 +302,7 @@ outline: 1px solid slategrey;
 			display: block;
 			width: 18px;
 			height: 8px;
-			border-width: 0;
-			border-style: solid;
-			border-color: #569760;
+			border: 0px solid #569760;
 			margin-top: 5px;
 			margin-left: 3px;
 			transition: all ease 0.3s;
@@ -313,6 +311,7 @@ outline: 1px solid slategrey;
 			-o-transition: all ease 0.3s;
 			transform: rotate(-45deg);
 			visibility: hidden;
+			box-sizing: border-box;
 		}
 		
 		&:checked {

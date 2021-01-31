@@ -164,7 +164,7 @@ document.querySelector("form.ContactForm").addEventListener("submit", (e) => {
     let form = e.currentTarget;
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", '/', true);
+    xhr.open("POST", '/public/build/api/contact.php', true);
 
     xhr.onreadystatechange = function() {
         if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
