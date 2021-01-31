@@ -11,6 +11,10 @@ background-color: darkgrey;
 outline: 1px solid slategrey;
 }
 
+.hidden {
+	display: none !important;
+}
+
 @media only screen and (max-width: 991px){
 	nav.navbar{
 		.navbar-collapse {
@@ -238,6 +242,8 @@ outline: 1px solid slategrey;
 	}
 
 	input[type=text],
+	input[type=email],
+	input[type=phone],
 	select,
 	textarea {
 		background-color: transparent;
@@ -282,6 +288,17 @@ outline: 1px solid slategrey;
 		text-align: center;
 		font-size: 13px;
 		font-weight: 300;
+	}
+
+	.contact-confirm {
+		p {
+			font-size: 21px;
+			margin-bottom: 20px;
+
+			&.bold {
+				font-weight: 600;
+			}
+		}
 	}
 }
 

@@ -157,3 +157,10 @@ var wow = new WOW({
 
 });
 wow.init();
+
+/* ------------  Contact Form */
+document.querySelector("form.ContactForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    document.querySelector(".ContactForm").classList.toggle("hidden");
+    document.querySelector(".ContactConfirm").classList.toggle("hidden");
+})

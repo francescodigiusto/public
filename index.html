@@ -490,27 +490,39 @@
 							<p class="heading--desc">Compila il modulo per usufruire di uno sconto del 20% a te riservato e richiedere maggiori informazioni sul servizio di tuo interesse.</p>
 						</div>
 					</div>
-					<div class="row clearfix wow fadeInUp" data-wow-duration="1s">
-						<div class="col-12 col-md-5 offset-md-1">
-							<input type="text" class="mb-20" name="" id="" placeholder="Nome">
-							<input type="text" class="mb-20" name="" id="" placeholder="Email">
-							<input type="text" class="mb-20" name="" id="" placeholder="Telefono">
-							<select name="" id="">
-								<option value="" disabled selected>Servizio di interesse</option>
-								<option value="1">Lavaggio Tappeto</option>
-								<option value="2">Restauro Tappeto</option>
-								<option value="3">Consulenza professionale</option>
-								<option value="4">Ritiro e sostituzione</option>
-								<option value="5">Vendita</option>
-								<option value="6">Più servizi</option>
-							</select>
+					<form class="ContactForm wow fadeInUp" data-wow-duration="1s">
+						<div class="row clearfix">
+							<div class="col-12 col-md-5 offset-md-1">
+								<input type="text" class="mb-20" name="" id="" placeholder="Nome" required>
+								<input type="email" class="mb-20" name="" id="" placeholder="Email" required>
+								<input type="phone" class="mb-20" name="" id="" placeholder="Telefono" required>
+								<select name="service" id="" required>
+									<option value="" disabled selected>Servizio di interesse</option>
+									<option value="1">Lavaggio Tappeto</option>
+									<option value="2">Restauro Tappeto</option>
+									<option value="3">Consulenza professionale</option>
+									<option value="4">Ritiro e sostituzione</option>
+									<option value="5">Vendita</option>
+									<option value="6">Più servizi</option>
+								</select>
+							</div>
+							<div class="col-12 col-md-5">
+								<textarea class="mb-20" name="message" placeholder="Il tuo messaggio" required></textarea>
+								<button class="btn btn--primary SendContactForm">SPEDISCI ORA</button>
+							</div>
+							<div class="col-12 mt-40 terms">
+								Accetto i termini e le condizioni ai sensi del regolamento Europeo - GDPR
+							</div>
 						</div>
-						<div class="col-12 col-md-5">
-							<textarea class="mb-20" placeholder="Il tuo messaggio"></textarea>
-							<button class="btn btn--primary">SPEDISCI ORA</button>
-						</div>
-						<div class="col-12 mt-40 terms">
-							Accetto i termini e le condizioni ai sensi del regolamento Europeo - GDPR
+					</form>
+					<div class="row clearfix wow fadeInUp ContactConfirm contact-confirm hidden" data-wow-duration="1s">
+						<div class="col-12">
+							<p>
+								<img src="./assets/images/svg/confirm.svg" alt="confirm">
+							</p>
+							<p class="bold">Invio dei dati completato con successo!</p>
+							<p class="mb-40">Ti ricontatteremo entro 24h</p>
+							<p class="bold">Seguici sui social per rimanere sempre aggiornato</p>
 						</div>
 					</div>
 				</div>
