@@ -161,6 +161,22 @@ wow.init();
 /* ------------  Contact Form */
 document.querySelector("form.ContactForm").addEventListener("submit", (e) => {
     e.preventDefault();
-    document.querySelector(".ContactForm").classList.toggle("hidden");
-    document.querySelector(".ContactConfirm").classList.toggle("hidden");
+    let form = e.currentTarget;
+    let xhr = new XMLHttpRequest();
+
+    xhr.open("GET", '/', true);
+
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            document.querySelector(".ContactForm").classList.add("hidden");
+            let success = document.querySelector(".ContactConfirm");
+            success.classList.remove("hidden");
+            success.style["visibility"] = "visible";
+            success.style["animation-name"] = "fadeInUp";
+        } else {
+            console.log("error message")
+        }
+    }
+
+    xhr.send(new FormData(form));
 })

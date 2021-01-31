@@ -38,7 +38,7 @@
 						<div class="collapse navbar-collapse" id="navbarContent">
 							<ul class="navbar-nav ml-auto mt-20">
 								<li class="nav-item active"><a class="nav-link" data-scroll="scrollTo" href="#hero">home</a></li>
-								<li class="nav-item"><a class="nav-link" data-scroll="scrollTo" href="#feature2">feature</a></li>
+								<li class="nav-item"><a class="nav-link" data-scroll="scrollTo" href="#feature2">intro</a></li>
 								<li class="nav-item"><a class="nav-link" data-scroll="scrollTo" href="#banner">azienda</a></li>
 								<li class="nav-item"><a class="nav-link" data-scroll="scrollTo" href="#reviews">chi siamo</a></li>
 								<li class="nav-item"><a class="nav-link" data-scroll="scrollTo" href="#pricing">servizi</a></li>
@@ -492,26 +492,29 @@
 					</div>
 					<form class="ContactForm wow fadeInUp" data-wow-duration="1s">
 						<div class="row clearfix">
-							<div class="col-12 col-md-5 offset-md-1">
-								<input type="text" class="mb-20" name="" id="" placeholder="Nome" required>
-								<input type="email" class="mb-20" name="" id="" placeholder="Email" required>
-								<input type="phone" class="mb-20" name="" id="" placeholder="Telefono" required>
-								<select name="service" id="" required>
+							<div class="col-12 col-md-10 offset-md-1 col-lg-5 offset-lg-1 mb-md-20">
+								<input type="text" class="mb-20" name="name" id="name" placeholder="Nome" required value="Francesco Di Giusto">
+								<input type="email" class="mb-20" name="email" id="email" placeholder="Email" required value="francesco.digiusto@gmail.com">
+								<input type="number" min="0" step="1" class="mb-20" name="phone" id="phone" placeholder="Telefono" required value="3404687166">
+								<select name="service" id="service" required>
 									<option value="" disabled selected>Servizio di interesse</option>
 									<option value="1">Lavaggio Tappeto</option>
 									<option value="2">Restauro Tappeto</option>
-									<option value="3">Consulenza professionale</option>
+									<option value="3" selected>Consulenza professionale</option>
 									<option value="4">Ritiro e sostituzione</option>
 									<option value="5">Vendita</option>
 									<option value="6">Più servizi</option>
 								</select>
 							</div>
-							<div class="col-12 col-md-5">
-								<textarea class="mb-20" name="message" placeholder="Il tuo messaggio" required></textarea>
+							<div class="col-12 col-md-10 offset-md-1 col-lg-5 offset-lg-0">
+								<textarea class="mb-20" name="message" id="message" placeholder="Il tuo messaggio" required>Testo di prova</textarea>
 								<button class="btn btn--primary SendContactForm">SPEDISCI ORA</button>
 							</div>
+						</div>
+						<div class="row clearfix">
 							<div class="col-12 mt-40 terms">
-								Accetto i termini e le condizioni ai sensi del regolamento Europeo - GDPR
+								<input type="checkbox" required name="terms" id="terms">
+								<label for="terms">Accetto i termini e le condizioni ai sensi del regolamento Europeo - GDPR</label>
 							</div>
 						</div>
 					</form>
