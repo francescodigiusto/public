@@ -120,7 +120,7 @@ Math.easeInOutQuad = function (t, b, c, d) {
     return -c/2 * (t*(t-2) - 1) + b;
 };
 
-document.querySelectorAll('.nav-item .nav-link').forEach((a) => {
+document.querySelectorAll('[data-scroll]').forEach((a) => {
     a.addEventListener("click", (event) => {
         var target = document.querySelector(a.getAttribute('href'));
         let els = a.parentNode.parentNode.children;
@@ -143,7 +143,6 @@ document.querySelectorAll('.nav-item .nav-link').forEach((a) => {
         }
     })
 })
-
 
 /* ------------------  Navbar Toggler ------------------ */
 
