@@ -1581,7 +1581,16 @@ section {
 }
 
 .header .navbar .navbar-brand {
-	margin-right: 0;
+	width: 340px;
+
+	@media only screen and (max-width: 991px) {
+		margin-left: 15px;
+		margin-right: 15px;
+		max-width: 70%;
+		height: 100px;
+		line-height: 100px;
+		display: flex;
+	}
 }
 
 .header .navbar .navbar-brand .logo-dark {
@@ -1595,6 +1604,12 @@ section {
 .header .navbar .navbar-nav>li {
 	margin-right: 30px;
 	position: relative;
+	@media only screen and (min-width: 992px) and (max-width: 1200px) {
+		margin-right: 16px;
+	}
+	@media screen and (max-width: 991px) {
+		margin-right: 0;
+	}
 }
 
 .header .navbar .navbar-nav>li:last-child {
@@ -1613,6 +1628,13 @@ section {
 	-webkit-transition: 0.3s ease-in-out;
 	-o-transition: 0.3s ease-in-out;
 	transition: 0.3s ease-in-out;
+
+	@media screen and (max-width: 991px) {
+		margin-right: 0;
+		padding: 15px 10px;
+		color: #333333;
+		line-height: 1;
+	}
 }
 
 .header .navbar .navbar-nav>li>a:before {
@@ -1644,16 +1666,6 @@ section {
 }
 
 @media screen and (max-width: 991px) {
-	.header .navbar .navbar-nav>li {
-		margin-right: 0;
-	}
-
-	.header .navbar .navbar-nav>li a {
-		margin-right: 0;
-		padding: 15px 10px;
-		color: #333333;
-		line-height: 1;
-	}
 
 	.header .navbar .navbar-nav>li.active {
 		background-color: #5ca466;
@@ -1737,14 +1749,6 @@ section {
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 991px) {
-	.header .navbar .navbar-brand {
-		margin-left: 15px;
-		margin-right: 15px;
-		max-width: 70%;
-		height: 100px;
-		line-height: 100px;
-		display: flex;
-	}
 
 	.navbar .navbar-toggler {
 		width: 30px;
@@ -1848,9 +1852,6 @@ section {
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-	.navbar-nav>li {
-		margin-right: 16px;
-	}
 
 	.module .module-icon,
 	.module-consultation .btn {
