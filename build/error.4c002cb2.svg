@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="169" height="168" viewBox="0 0 169 168">
+    <defs>
+        <filter id="0w6dcdm0la">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.648319 0 0 0 0 0.147290 0 0 0 0 0.147290 0 0 0 1.000000 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-636 -262) translate(636 262)">
+                    <ellipse cx="84.805" cy="84" fill="#92161D" rx="84.121" ry="84"/>
+                </g>
+                <g fill="#FFF">
+                    <path d="M56.727 0L12.1 45.335 0.914 56.588 12.198 67 68 11.261z" transform="translate(-636 -262) translate(636 262) translate(50 50)"/>
+                    <g>
+                        <path d="M55.813 0L23.032 33.301 11.186 45.335 0 56.588 11.284 67 35.511 42.8 67.086 11.261z" transform="translate(-636 -262) translate(636 262) translate(50 50) matrix(-1 0 0 1 67.086 0)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
